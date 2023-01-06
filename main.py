@@ -14,5 +14,5 @@ from Solver import run
 from Display import produceImg
 from ImageReader import processImage
 
-fileName = 'magic-squares-test-notViable.png'
+fileName = 'INSERTFILENAMEHERE'
 produceImg((run((processImage(fileName)))))
