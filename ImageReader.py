@@ -61,8 +61,8 @@ def processImage(imageFile):
             cv2.drawContours(mask, [i], -1, (255, 255, 255), -1)
             result = cv2.bitwise_and(board, mask)
             result[mask == 0] = 255
-            yippityyeppetyyep = cv2.cvtColor(result, cv2.COLOR_BGR2GRAY)
-            string = pytesseract.image_to_string(yippityyeppetyyep, config='--psm 6 --oem 1 -c tessedit_char_whitelist=0123456789')
+            grayBox = cv2.cvtColor(result, cv2.COLOR_BGR2GRAY)
+            string = pytesseract.image_to_string(grayBox, config='--psm 6 --oem 1 -c tessedit_char_whitelist=0123456789')
             boxContent.append(string)
             cv2.waitKey(10)
 
